@@ -8,12 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textLabel: UILabel!
+    
+    @IBAction func clickButton(_ sender: Any) {
+        textLabel.text = "Real Supper App!!!"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
     }
 
-
+    
 }
 

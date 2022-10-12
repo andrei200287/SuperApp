@@ -23,13 +23,13 @@ class ViewController: UIViewController {
             let date = Date()
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:MM:ss"
+            dateFormatter.dateFormat = "hh:mm:ss"
             dateFormatter.timeZone = TimeZone(identifier: "Europe/Kyiv")
             let currentTime = dateFormatter.string(from: date)
             
             
             let dateFormatter2 = DateFormatter()
-            dateFormatter2.dateFormat = "hh:MM:ss"
+            dateFormatter2.dateFormat = "hh:mm:ss"
             dateFormatter2.timeZone = TimeZone(identifier: "Asia/Bangkok")
             let currentTime2 = dateFormatter2.string(from: date)
             

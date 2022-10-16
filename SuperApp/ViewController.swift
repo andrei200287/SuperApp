@@ -16,8 +16,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
-       
+        self.startTimer()
+            
         
+    }
+    
+    func startTimer() {
         Timer.scheduledTimer(withTimeInterval:  1, repeats: true) { (_) in
             
             let date = Date()
@@ -33,10 +37,8 @@ class ViewController: UIViewController {
             dateFormatter2.timeZone = TimeZone(identifier: "Asia/Bangkok")
             let currentTime2 = dateFormatter2.string(from: date)
             
-            
-            self.textLabel.text = "Kyiv: \(currentTime)\nBangkok: \(currentTime2)"
-            
-            
+            self.textLabel.text = "Kyiw:\(currentTime)\nBangkok:\(currentTime2)"
         }
+        
     }
 }

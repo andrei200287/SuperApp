@@ -11,21 +11,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
     
-    @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
-        switch segmentControlOutlet.selectedSegmentIndex
-        {
-        case 0:
-            self.textLabel.text = "\(currentTime)"
-        case 1:
-            self.textLabel.text = "\(currentTime2)"
-            
-            
-        default:
-            break
-        }
-        
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,26 +25,36 @@ class ViewController: UIViewController {
             textLabel.text = getLabelText()
             
         }
-        func getLabelText() -> String {
-            
-            let date = Date()
-            
+    }
+    func getLabelText() -> String {
+        
+        let date = Date()
+        
+        var currentTime: String = ""
+        if segmentControlOutlet.selectedSegmentIndex == 0 {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm:ss"
             dateFormatter.timeZone = TimeZone(identifier: "Europe/Kyiv")
-            let currentTime = dateFormatter.string(from: date)
+            currentTime = dateFormatter.string(from: date) }
+      
+        else {
             
-            
-           
-            let dateFormatter2 = DateFormatter()
-            dateFormatter2.dateFormat = "hh:mm:ss"
-            dateFormatter2.timeZone = TimeZone(identifier: "Asia/Bangkok")
-            let currentTime2 = dateFormatter2.string(from: date)
-            
-                return "\(currentTime2)"
+        if segmentControlOutlet.selectedSegmentIndex == 2 {
+                let dateFormatter3 = DateFormatter()
+                dateFormatter3.dateFormat = "hh:mm:ss"
+                dateFormatter3.timeZone = TimeZone(identifier: "Europe/Istanbul")
+                currentTime = dateFormatter3.string(from: date)
+                
+            } else {
+                let dateFormatter2 = DateFormatter()
+                dateFormatter2.dateFormat = "hh:mm:ss"
+                dateFormatter2.timeZone = TimeZone(identifier: "Asia/Bangkok")
+                currentTime = dateFormatter2.string(from: date)
             }
+    
         }
-        
-        
+        return currentTime
     }
-
+    
+    
+}

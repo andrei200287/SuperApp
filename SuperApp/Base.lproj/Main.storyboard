@@ -16,36 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79z-3X-ha8">
-                                <rect key="frame" x="195" y="428.66666666666669" width="0.0" height="0.0"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kyiw" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-P0-Ggp">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79z-3X-ha8">
+                                <rect key="frame" x="122" y="406" width="146" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0Q-b9-uM1">
-                                <rect key="frame" x="158" y="494.66666666666669" width="75" height="45.333333333333314"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Click me">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
-                                </buttonConfiguration>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vs7-y1-K3c">
+                                <rect key="frame" x="65" y="188" width="260" height="32"/>
+                                <segments>
+                                    <segment title="Kyiv"/>
+                                    <segment title="Bangkok"/>
+                                    <segment title="Istanbul"/>
+                                </segments>
                                 <connections>
-                                    <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="olO-ue-paU"/>
+                                    <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="v0n-QF-P2E"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QiD-P0-Ggp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Ou-zd-bJN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vs7-y1-K3c" secondAttribute="trailing" constant="65" id="7K3-33-AFT"/>
                             <constraint firstItem="79z-3X-ha8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Cj2-U7-PVI"/>
                             <constraint firstItem="79z-3X-ha8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JcL-6m-JhO"/>
-                            <constraint firstItem="q0Q-b9-uM1" firstAttribute="top" secondItem="79z-3X-ha8" secondAttribute="bottom" constant="66" id="Srd-Q9-vwG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q0Q-b9-uM1" secondAttribute="bottom" constant="270" id="Z6C-cD-TTK"/>
-                            <constraint firstItem="q0Q-b9-uM1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158" id="e6H-FJ-QRt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q0Q-b9-uM1" secondAttribute="trailing" constant="157" id="nyJ-qb-jIU"/>
+                            <constraint firstItem="vs7-y1-K3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="Tcu-iq-3WU"/>
+                            <constraint firstItem="QiD-P0-Ggp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bqJ-7D-zQt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="79z-3X-ha8" secondAttribute="trailing" constant="122" id="cAh-W3-lkp"/>
+                            <constraint firstItem="QiD-P0-Ggp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eaO-Iw-gEC"/>
+                            <constraint firstItem="79z-3X-ha8" firstAttribute="top" secondItem="vs7-y1-K3c" secondAttribute="bottom" constant="187" id="gTL-ve-pK2"/>
+                            <constraint firstItem="79z-3X-ha8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="m6o-3G-nnV"/>
+                            <constraint firstAttribute="bottom" secondItem="QiD-P0-Ggp" secondAttribute="bottom" id="nJx-C5-yKj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="79z-3X-ha8" secondAttribute="bottom" constant="359" id="zqR-TR-g5U"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="image" destination="QiD-P0-Ggp" id="BBD-o1-Xz9"/>
+                        <outlet property="segmentControlOutlet" destination="vs7-y1-K3c" id="i3o-zY-5lW"/>
                         <outlet property="textLabel" destination="79z-3X-ha8" id="Haq-su-UTw"/>
                     </connections>
                 </viewController>
@@ -55,11 +68,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kyiw" width="1000" height="666"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

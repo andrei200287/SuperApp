@@ -10,30 +10,40 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var myimage: UIImageView!
+    @IBOutlet var myView: UIView!
     
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
+        
         switch segmentControlOutlet.selectedSegmentIndex {
         case 0:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "kyiw")
+            myimage.image = UIImage (named: "kyiw")
+            UIView.transition(with: myimage, duration: 0.75, options: .transitionCrossDissolve, animations: {
+                self.myimage = self.myimage
+            })
         case 1:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "bangkok")
+            myimage.image = UIImage (named: "bangkok")
+            UIView.transition(with: myimage, duration: 0.75, options: .transitionCrossDissolve, animations: {
+                self.myimage = self.myimage
+            })
         case 2:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "istanbul")
+            myimage.image = UIImage (named: "istanbul")
+                UIView.transition(with: myimage, duration: 0.75, options: .transitionCrossDissolve, animations: {
+                    self.myimage = self.myimage
+                })
         default:
             break
+            
         }
+      
     }
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.startTimer()
-        
     }
     
     func startTimer() {
@@ -70,6 +80,4 @@ class ViewController: UIViewController {
         }
         return currentTime
     }
-    
-    
 }

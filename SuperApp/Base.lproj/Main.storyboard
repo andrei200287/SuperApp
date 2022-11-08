@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kyiw" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-P0-Ggp">
-                                <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="390" id="P7O-de-2Bf"/>
                                     <constraint firstAttribute="width" constant="844" id="bx3-bJ-mAq"/>
@@ -26,18 +26,18 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vs7-y1-K3c">
-                                <rect key="frame" x="65" y="55" width="714" height="32"/>
+                                <rect key="frame" x="65" y="55" width="260" height="32"/>
                                 <segments>
                                     <segment title="Kyiv"/>
                                     <segment title="Bangkok"/>
                                     <segment title="Istanbul"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="v0n-QF-P2E"/>
+                                    <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="cKE-ax-yhO"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79z-3X-ha8">
-                                <rect key="frame" x="422" y="195" width="0.0" height="0.0"/>
+                                <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +65,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="image" destination="QiD-P0-Ggp" id="BBD-o1-Xz9"/>
+                        <outlet property="myView" destination="8bC-Xf-vdC" id="guG-MV-J1y"/>
+                        <outlet property="myimage" destination="QiD-P0-Ggp" id="oQo-Ij-jeh"/>
                         <outlet property="segmentControlOutlet" destination="vs7-y1-K3c" id="i3o-zY-5lW"/>
                         <outlet property="textLabel" destination="79z-3X-ha8" id="Haq-su-UTw"/>
                     </connections>

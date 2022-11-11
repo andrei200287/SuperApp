@@ -10,25 +10,30 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var myimage: UIImageView!
+    @IBOutlet var myView: UIView!
     
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
+        
         switch segmentControlOutlet.selectedSegmentIndex {
         case 0:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "kyiw")
+            myimage.image = UIImage (named: "kyiw")
+            self.animateImage(_image: myimage)
         case 1:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "bangkok")
+            myimage.image = UIImage (named: "bangkok")
+            self.animateImage(_image: myimage)
         case 2:
             textLabel.text = getLabelText()
-            image.image = UIImage (named: "istanbul")
+            myimage.image = UIImage (named: "istanbul")
+            self.animateImage(_image: myimage)
         default:
             break
+            
         }
+        
     }
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -40,7 +45,7 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval:  1, repeats: true) { [self] (_) in
             
             textLabel.text = getLabelText()
-
+            
         }
     }
     func getLabelText() -> String {
@@ -55,7 +60,7 @@ class ViewController: UIViewController {
             currentTime = dateFormatter.string(from: date) }
         else {
             
-        if segmentControlOutlet.selectedSegmentIndex == 2 {
+            if segmentControlOutlet.selectedSegmentIndex == 2 {
                 let dateFormatter3 = DateFormatter()
                 dateFormatter3.dateFormat = "hh:mm:ss"
                 dateFormatter3.timeZone = TimeZone(identifier: "Europe/Istanbul")
@@ -66,10 +71,13 @@ class ViewController: UIViewController {
                 dateFormatter2.timeZone = TimeZone(identifier: "Asia/Bangkok")
                 currentTime = dateFormatter2.string(from: date)
             }
-    
+            
         }
         return currentTime
     }
-    
-    
+    func animateImage(_image:UIImageView) {
+        
+        UIView.transition(with: myimage, duration: 0.75, options: .transitionCrossDissolve, animations: {
+            self.myimage = self.myimage })
+    }
 }
